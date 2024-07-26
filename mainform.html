@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice App by Sumod</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 20px;
+      padding: 20px;
+    }
+    h2 {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-group {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .form-group label {
+      min-width: 150px;
+      margin-right: 10px;
+      line-height: 30px;
+    }
+    .form-group input[type="text"], 
+    .form-group input[type="email"], 
+    .form-group input[type="tel"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    input[type="text"]:focus, 
+    input[type="email"]:focus, 
+    input[type="tel"]:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+    input[type="submit"], 
+    input[type="reset"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    input[type="submit"]:hover, 
+    input[type="reset"]:hover {
+      background-color: #0056b3;
+    }
+    #submission-counter {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+	
+
+  
+    body {
+      background-color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+  
+	
+  </style>
+   
+   
+   <script>
+    // Function to sync scroll position of frameB with frameA
+    function syncScroll() {
+      var frameA = window.parent.frames['frameA'];
+      var frameB = window;
+      
+      // Add scroll event listener to frameB
+      frameB.addEventListener('scroll', function() {
+        // Sync scrollTop position from frameB to frameA
+        frameA.scrollTo(0, frameB.scrollY);
+      });
+    }
+    
+    // Call syncScroll when frameB is fully loaded
+    window.addEventListener('load', syncScroll);
+  </script>
+   
+</head>
+<body>
+  <form id="myForm" onsubmit="submitForm(event)">
+    <h2>Personal Information</h2>
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <input type="text" id="gender" name="gender" required>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="text" id="dob" name="dob" required>
+    </div>
+    <div class="form-group">
+      <label for="gsn">GSN:</label>
+      <input type="text" id="gsn" name="gsn" required>
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div class="form-group">
+      <label for="address2">Address 2:</label>
+      <input type="text" id="address2" name="address2">
+    </div>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+    </div>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required>
+    </div>
+    <div class="form-group">
+      <label for="postal">Postal:</label>
+      <input type="text" id="postal" name="postal" required>
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact:</label>
+      <input type="tel" id="contact" name="contact" required>
+    </div>
+    <div class="form-group">
+      <label for="recordId">Record Id:</label>
+      <input type="text" id="recordId" name="recordId" required>
+    </div>
+    <div class="form-group">
+      <label for="captcha">Captcha:</label>
+      <input type="text" id="captcha" name="captcha" required>
+    </div>
+
+    <h2>Account Information</h2>
+    <div class="form-group">
+      <label for="customerId">Customer Id:</label>
+      <input type="text" id="customerId" name="customerId" required>
+    </div>
+    <div class="form-group">
+      <label for="accountType">Account Type:</label>
+      <input type="text" id="accountType" name="accountType" required>
+    </div>
+    <div class="form-group">
+      <label for="acn">A/c Name:</label>
+      <input type="text" id="acn" name="acn" required>
+    </div>
+    <div class="form-group">
+      <label for="acNumber">A/c Number:</label>
+      <input type="text" id="acNumber" name="acNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="iban">IBAN:</label>
+      <input type="text" id="iban" name="iban" required>
+    </div>
+    <div class="form-group">
+      <label for="bic">BIC:</label>
+      <input type="text" id="bic" name="bic" required>
+    </div>
+    <div class="form-group">
+      <label for="btcAddress">BTC Address:</label>
+      <input type="text" id="btcAddress" name="btcAddress" required>
+    </div>
+    <div class="form-group">
+      <label for="ethAddress">ETH Address:</label>
+      <input type="text" id="ethAddress" name="ethAddress" required>
+    </div>
+    <div class="form-group">
+      <label for="ltcAddress">LTC Address:</label>
+      <input type="text" id="ltcAddress" name="ltcAddress" required>
+    </div>
+    <div class="form-group">
+      <label for="ccNo">CC_No:</label>
+      <input type="text" id="ccNo" name="ccNo" required>
+    </div>
+    <div class="form-group">
+      <label for="lastTxnAmount">Last Txn Amount:</label>
+      <input type="text" id="lastTxnAmount" name="lastTxnAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="lastTxnDate">Last Txn Date:</label>
+      <input type="text" id="lastTxnDate" name="lastTxnDate" required>
+    </div>
+
+    <h2>Investment Information</h2>
+    <div class="form-group">
+      <label for="company">Company:</label>
+      <input type="text" id="company" name="company" required>
+    </div>
+    <div class="form-group">
+      <label for="businessSegment">Business Segment:</label>
+      <input type="text" id="businessSegment" name="businessSegment" required>
+    </div>
+    <div class="form-group">
+      <label for="ein">EIN:</label>
+      <input type="text" id="ein" name="ein" required>
+    </div>
+    <div class="form-group">
+      <label for="skillDescription">Skill Description:</label>
+      <input type="text" id="skillDescription" name="skillDescription" required>
+    </div>
+    <div class="form-group">
+      <label for="isin">ISIN:</label>
+      <input type="text" id="isin" name="isin" required>
+    </div>
+    <div class="form-group">
+      <label for="coupon">Coupon:</label>
+      <input type="text" id="coupon" name="coupon" required>
+    </div>
+    <div class="form-group">
+      <label for="investmentAmount">Investment Amount:</label>
+      <input type="text" id="investmentAmount" name="investmentAmount" required>
+    </div>
+    <div class="form-group">
+      <label for="maturityDate">Maturity Date:</label>
+      <input type="text" id="maturityDate" name="maturityDate" required>
+    </div>
+    <div class="form-group">
+      <label for="bondName">Bond Name:</label>
+      <input type="text" id="bondName" name="bondName" required>
+    </div>
+    <div class="form-group">
+      <label for="bondClass">Bond Class:</label>
+      <input type="text" id="bondClass" name="bondClass" required>
+    </div>
+
+    <h2>Last Purchase Details</h2>
+    <div class="form-group">
+      <label for="department">Department:</label>
+      <input type="text" id="department" name="department" required>
+    </div>
+    <div class="form-group">
+      <label for="earn13">Earn13:</label>
+      <input type="text" id="earn13" name="earn13" required>
+    </div>
+    <div class="form-group">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" required>
+    </div>
+    <div class="form-group">
+      <label for="unitPrice">Unit Price:</label>
+      <input type="text" id="unitPrice" name="unitPrice" required>
+    </div>
+    <div class="form-group">
+      <label for="user">User:</label>
+      <input type="text" id="user" name="user" required>
+    </div>
+    <div class="form-group">
+      <label for="purchaseToken">Purchase Token:</label>
+      <input type="text" id="purchaseToken" name="purchaseToken" required>
+    </div>
+    <div class="form-group">
+      <label for="buyingIPv4">Buying IPv4:</label>
+      <input type="text" id="buyingIPv4" name="buyingIPv4" required>
+    </div>
+    <div class="form-group">
+      <label for="buyingIPv6">Buying IPv6:</label>
+      <input type="text" id="buyingIPv6" name="buyingIPv6" required>
+    </div>
+
+    <h2>Vehicle Details</h2>
+    <div class="form-group">
+      <label for="vehicleType">Type:</label>
+      <input type="text" id="vehicleType" name="vehicleType" required>
+    </div>
+    <div class="form-group">
+      <label for="vehicleModel">Model:</label>
+      <input type="text" id="vehicleModel" name="vehicleModel" required>
+    </div>
+    <div class="form-group">
+      <label for="vehicleManufacture">Manufacture:</label>
+      <input type="text" id="vehicleManufacture" name="vehicleManufacture" required>
+    </div>
+    <div class="form-group">
+      <label for="vehicleVIN">VIN:</label>
+      <input type="text" id="vehicleVIN" name="vehicleVIN" required>
+    </div>
+
+    <h2>Insurance Details</h2>
+    <div class="form-group">
+      <label for="beneficiaryId">Beneficiary Identifier:</label>
+      <input type="text" id="beneficiaryId" name="beneficiaryId" required>
+    </div>
+    <div class="form-group">
+      <label for="insuranceNo">Insurance No.:</label>
+      <input type="text" id="insuranceNo" name="insuranceNo" required>
+    </div>
+
+    <h2>Account Advisor </h2>
+    <div class="form-group">
+      <label for="advisorId1">Advisor ID:</label>
+      <input type="text" id="advisorId1" name="advisorId1" required>
+    </div>
+    <div class="form-group">
+      <label for="advisorName1">Name:</label>
+      <input type="text" id="advisorName1" name="advisorName1" required>
+    </div>
+    <div class="form-group">
+      <label for="advisorContact1">Contact:</label>
+      <input type="text" id="advisorContact1" name="advisorContact1" required>
+    </div>
+    <div class="form-group">
+      <label for="advisorAddress1">Address:</label>
+      <input type="text" id="advisorAddress1" name="advisorAddress1" required>
+    </div>
+
+	    <h2>Account Advisor 2</h2>
+    <div class="form-group">
+      <label for="advisorId1">Advisor ID:</label>
+      <input type="text" id="advisorId1" name="advisorId1" required>
+    </div>
+    <div class="form-group">
+      <label for="advisorName1">Name:</label>
+      <input type="text" id="advisorName1" name="advisorName1" required>
+    </div>
+    <div class="form-group">
+      <label for="advisorContact1">Contact:</label>
+      <input type="text" id="advisorContact1" name="advisorContact1" required>
+    </div>
+    <div class="form-group">
+      <label for="advisorAddress1">Address:</label>
+      <input type="text" id="advisorAddress1" name="advisorAddress1" required>
+    </div>
+
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+    <div id="submission-counter">Total Submissions: 0</div>
+  </form>
+
+  <script>
+    // Counter for submissions
+    let submissionCount = 0;
+
+    // Function to handle form submission
+    function submitForm(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Validate form fields (in this example, assuming all fields are required)
+      let isValid = document.getElementById('myForm').checkValidity();
+
+      if (isValid) {
+        submissionCount++; // Increment submission count
+        document.getElementById('submission-counter').textContent = `Total Submissions: ${submissionCount}`;
+
+        // Optionally, you can reset the form after submission
+        document.getElementById('myForm').reset();
+      }
+    }
+  </script>
+</body>
+</html>

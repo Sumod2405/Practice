@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Sumod</title>
+ <script>
+    function syncScrolls() {
+      // Get references to the frames
+      var frameA = document.getElementById('frameA');
+      var frameB = document.getElementById('frameB');
+
+      // Function to sync the scroll positions
+      function onScroll() {
+        var a = frameA.contentWindow;
+        var b = frameB.contentWindow;
+
+        // Sync scroll positions
+        if (a) {
+          b.scrollTo(a.pageXOffset, a.pageYOffset);
+        }
+        if (b) {
+          a.scrollTo(b.pageXOffset, b.pageYOffset);
+        }
+      }
+
+      // Attach the scroll event listeners
+      frameA.contentWindow.addEventListener('scroll', onScroll);
+      frameB.contentWindow.addEventListener('scroll', onScroll);
+    }
+
+    // Call syncScrolls when the window is loaded
+    window.onload = function() {
+      // Add event listeners to each frame once they are loaded
+      var frameA = document.getElementById('frameA');
+      var frameB = document.getElementById('frameB');
+
+      frameA.onload = syncScrolls;
+      frameB.onload = syncScrolls;
+    };
+  </script>
+<frameset cols = "35%,*">  
+        
+		
+		<frame src="RandomData.html" name="frameA" >
+  <frame src="mainform.html" name="frameB">
+		
+    </frameset> 
+</head>
+<body>
+
+
+</body>
+</html>
